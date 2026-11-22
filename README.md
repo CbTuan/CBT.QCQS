@@ -4,6 +4,7 @@ Trang này chứa các bản phát hành của add-in Excel **CBT.QCQS** (file `
 
 - Tải bản mới nhất: **[AddinQSQCCBT.xlam](https://github.com/CbTuan/CBT.QCQS/releases/latest/download/AddinQSQCCBT.xlam)** (hoặc trang [Releases → Latest](https://github.com/CbTuan/CBT.QCQS/releases/latest), mục *Assets*).
 - Từ bản **20261122**, tên file add-in **cố định là `AddinQSQCCBT.xlam`**, không còn kèm năm (`AddinQSQCCBT2026.01.xlam` là tên cũ).
+- **Hướng dẫn cài đặt (PDF), file biểu mẫu, Ribbon AutoCAD, ví dụ áp dụng:** [thư mục Google Drive](https://drive.google.com/drive/folders/1Ep2MN64yRrePQJx4vEQdTB4GBcDLxkiZ) (nút *Tài liệu & ví dụ* trong nhóm Cài đặt của tab CBT.QCQS).
 - Cập nhật bằng nút **Kiểm tra cập nhật** (tab CBT.QCQS → nhóm Tác giả → **Hỗ trợ**). Add-in không tự kiểm tra, không tự tải.
 
 ---
@@ -12,7 +13,7 @@ Trang này chứa các bản phát hành của add-in Excel **CBT.QCQS** (file `
 
 Làm 1 lần duy nhất, kể cả khi đang dùng bản cũ `AddinQSQCCBT2026.01.xlam`.
 
-1. Tải file [`AddinQSQCCBT.xlam`](https://github.com/CbTuan/CBT.QCQS/releases/latest/download/AddinQSQCCBT.xlam). Trình duyệt cảnh báo thì chọn **Keep / Giữ lại**.
+1. Tải file [`AddinQSQCCBT.xlam`](https://github.com/CbTuan/CBT.QCQS/releases/latest/download/AddinQSQCCBT.xlam). Trình duyệt cảnh báo thì chọn **Keep / Giữ lại**. Máy cài lần đầu tải thêm từ [Google Drive](https://drive.google.com/drive/folders/1Ep2MN64yRrePQJx4vEQdTB4GBcDLxkiZ), thư mục `01 Phan mem Addin CBT.QCQS`: file biểu mẫu `AddinQSQCCBTKemTheo.xls` và thư mục `CBT_QCQS.bundle` (Ribbon AutoCAD), chép cùng chỗ ở bước 3 (đã có `AddinQSQCCBTKemTheo.xls` thì không chép đè).
 2. **Bỏ chặn file tải từ Internet:** chuột phải file → **Properties** → tích **Unblock** (Bỏ chặn) → OK. Không thấy ô Unblock thì bỏ qua. Nếu không bỏ chặn, Excel chặn macro và add-in không chạy.
 3. Chép file vào **cùng thư mục với bản cũ** (thư mục đang có `AddinQSQCCBTKemTheo.xls` và `CBT_QCQS.bundle`). Thường là:
    `C:\Users\<tên>\AppData\Roaming\Microsoft\AddIns\`
@@ -36,11 +37,13 @@ Bấm **Kiểm tra cập nhật** (tab CBT.QCQS → Tác giả → Hỗ trợ):
 | 2 | Có bản mới → cửa sổ **Cập nhật AddinQSQCCBT** hiện nội dung thay đổi, nút **Cập nhật ngay** / **Để sau**. |
 | 3 | **Cập nhật ngay** → thanh tiến trình tải về (có nút **Hủy**). Tải xong add-in tự kiểm tra mã SHA-256. |
 | 4 | **Đóng Excel và cài đặt** → Excel đóng (file chưa lưu được hỏi lưu như bình thường). Chọn **Để sau** thì bản mới tự cài ở lần đóng Excel kế tiếp. |
-| 5 | Cửa sổ cài đặt: chờ Excel đóng hẳn → thay file add-in (bản cũ giữ lại thành `AddinQSQCCBT.xlam.bak`). |
+| 5 | Cửa sổ cài đặt: chờ Excel đóng hẳn → thay file add-in (bản cũ giữ lại thành `CBT_SaoLuu\AddinQSQCCBT.xlam.bak`). |
 | 6 | **Cập nhật xong** → bấm **Mở Excel**. Mã kích hoạt và thiết lập được giữ nguyên. |
 
 - Tắt máy giữa chừng **không làm hỏng add-in**: hoặc đã thay xong, hoặc chưa thay gì.
 - Tên file add-in không đổi nên **link hàm tự tạo trong các file Excel không bị ảnh hưởng**.
+
+**Thư mục `CBT_SaoLuu`** (cạnh file add-in): chứa file tải về (`.new`) và bản trước khi cập nhật (`.bak`). Để ở thư mục con để hộp Excel Add-ins không hiện thêm dòng "Addinqsqccbt.Xlam". Không xóa cũng không sao; xóa thì mất bản để quay lại.
 
 ## 3. Link hàm tự tạo trong file Excel
 
@@ -56,12 +59,12 @@ Khi mở một file có công thức dùng hàm tự tạo của add-in nhưng l
 
 **Đã tải nhưng cài khi đóng Excel thất bại nhiều lần:** bấm **Kiểm tra cập nhật**, add-in mở thư mục chứa file và hướng dẫn cài tay:
 1. Đóng hết Excel.
-2. Xóa (hoặc đổi tên) `AddinQSQCCBT.xlam`.
-3. Đổi tên `AddinQSQCCBT.xlam.new` thành `AddinQSQCCBT.xlam`.
+2. Xóa (hoặc đổi tên) `AddinQSQCCBT.xlam` trong thư mục add-in.
+3. Chép file `CBT_SaoLuu\AddinQSQCCBT.xlam.new` ra thư mục add-in, đổi tên thành `AddinQSQCCBT.xlam`.
 
 **Thư mục add-in không ghi được** (cài trong Program Files…): add-in hỏi mở trang tải về rồi chép đè tay (đóng Excel trước). Khuyên dùng thư mục `%APPDATA%\Microsoft\AddIns`.
 
-**Muốn quay lại bản trước:** đóng hết Excel → trong thư mục add-in, đổi tên `AddinQSQCCBT.xlam` thành tên khác, rồi đổi tên `AddinQSQCCBT.xlam.bak` thành `AddinQSQCCBT.xlam`.
+**Muốn quay lại bản trước:** đóng hết Excel → trong thư mục add-in, đổi tên `AddinQSQCCBT.xlam` thành tên khác → chép `CBT_SaoLuu\AddinQSQCCBT.xlam.bak` ra thư mục add-in, đổi tên thành `AddinQSQCCBT.xlam`.
 
 **Không kết nối được GitHub** (mạng công ty chặn `github.com`): tải file ở máy khác, cài tay như mục 1 (bước 2–4, chép đè `AddinQSQCCBT.xlam` khi Excel đã đóng).
 
